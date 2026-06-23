@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل التوجيهي الشامل لمنظومة YRG الذكية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { background-color: #f1f5f9; font-family: 'Cairo', sans-serif; margin: 0; padding: 20px; display: flex; flex-direction: column; gap: 30px; align-items: center; }
+        .slide { background-color: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 1280px; height: 740px; padding: 40px 60px; position: relative; overflow: hidden; display: none; flex-direction: column; justify-content: space-between; }
+        .slide.active { display: flex; }
+        
+        /* الهوية البصرية لـ YRG */
+        .bg-royal { background: linear-gradient(135deg, #002D62 0%, #001a3a 100%); color: #ffffff; }
+        .text-royal { color: #002D62; }
+        .text-orange { color: #E67E22; }
+        .border-orange { border-right: 6px solid #E67E22; padding-right: 15px; }
+
+        /* العناوين والنصوص */
+        h1 { font-size: 42px; font-weight: 700; margin: 0; line-height: 1.3; }
+        h2 { font-size: 32px; font-weight: 700; margin: 0 0 15px 0; }
+        p { font-size: 19px; line-height: 1.6; margin: 0 0 12px 0; color: #334155; }
+        .bg-royal p, .bg-royal h1, .bg-royal h2 { color: #ffffff; }
+        
+        /* التقسيم والشرائح */
+        .flex-container { display: table; width: 100%; table-layout: fixed; margin-top: 10px; }
+        .col-text { display: table-cell; width: 52%; vertical-align: top; padding-left: 30px; }
+        .col-img { display: table-cell; width: 48%; vertical-align: middle; text-align: center; }
+        
+        .img-box { border: 3px solid #e2e8f0; border-radius: 12px; padding: 5px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block; max-height: 470px; overflow: hidden; }
+        .img-box img { max-height: 455px; max-width: 100%; object-fit: contain; border-radius: 8px; }
+        .grid-2 { display: flex; gap: 15px; justify-content: center; align-items: center; }
+        .grid-col { flex: 1; text-align: center; }
+        
+        .step-badge { background-color: #E67E22; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 15px; font-weight: 700; display: inline-block; margin-bottom: 15px; }
+        .bullet-list { padding-right: 20px; margin: 0; }
+        .bullet-list li { font-size: 18px; margin-bottom: 10px; line-height: 1.5; color: #334155; }
+        
+        /* الفاتورة النهائية المعتمدة لشركة YRG */
+        .invoice-box { border: 2px dashed #002D62; padding: 25px; border-radius: 8px; background: #fff; font-family: 'Cairo', sans-serif; text-align: right; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-top: 5px; }
+        .invoice-header { display: flex; justify-content: space-between; border-bottom: 2px solid #002D62; padding-bottom: 10px; margin-bottom: 15px; }
+        .invoice-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .invoice-table th { background-color: #002D62; color: white; padding: 10px; font-size: 14px; text-align: center; }
+        .invoice-table td { border: 1px solid #cbd5e1; padding: 10px; font-size: 14px; text-align: center; }
+
+        /* أزرار التنقل التفاعلية */
+        .nav-container { display: flex; gap: 15px; position: absolute; left: 60px; bottom: 30px; z-index: 100; }
+        .nav-btn { background-color: #E67E22; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 16px; transition: 0.2s; }
+        .nav-btn:hover { background-color: #d35400; }
+        .nav-btn.prev { background-color: #002D62; }
+        .nav-btn.prev:hover { background-color: #001a3a; }
+
+        .footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 15px; font-size: 14px; color: #64748b; }
+        .bg-royal .footer { border-top: 1px solid rgba(255,255,255,0.1); color: #94a3b8; }
+    </style>
+</head>
+<body>
+
+    <!-- الشريحة 1: الواجهة الرئيسية -->
+    <div class="slide bg-royal active">
+        <div style="margin-top: 120px; text-align: center;">
+            <div style="background: #E67E22; display: inline-block; padding: 8px 20px; border-radius: 4px; font-weight: 700; margin-bottom: 25px;">YRG SYSTEMS 2026</div>
+            <h1>الدليل التشغيلي التوجيهي الشامل والموسع</h1>
+            <p style="font-size: 24px; margin-top: 15px; color: #cbd5e1;">لإدارة دورة عمليات الصيانة الذكية، تسجيل المرتجعات، وفحص السجلات سحابياً</p>
+            <p style="font-size: 18px; color: #94a3b8; margin-top: 40px;">إعداد وتطوير: محمد حسين | جونيور محاسب ومطور حلول الأتمتة</p>
+        </div>
+        <div class="footer">
+            <span>منظومة شركة YRG للأجهزة الكهربائية</span>
+            <span>الشريحة 1 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 2: شاشة تسجيل صيانة والـ Master Form -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">1. تسجيل صيانة - شاشة العميل</span>
+            <h2 class="text-royal border-orange">تسجيل بيانات العميل الرئيسية في الـ Master Form</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>المرحلة التشغيلية الأولى المخصصة لاستقبال حركات الصيانة عبر شاشة الهاتف:</p>
+                    <ul class="bullet-list">
+                        <li><strong>توليد كود المعاملة الفرعي:</strong> ينشئ النظام تلقائياً حقل [رقم المعاملة] ليكون بمثابة الرقم المرجعي الثابت للفاتورة (مثل: `2354c0bd`).</li>
+                        <li><strong>إدخال اسم العميل الإجباري:</strong> يجب الضغط على حقل [اسم العميل] وتحديد اسم العميل بدقة لربط الأجهزة به (مثل: .المهندس طارق).</li>
+                        <li><strong>التاريخ والوقت المحمي:</strong> يسحب التطبيق توقيت هاتف المستخدم تلقائياً ويثبته باليوم والساعة لتوثيق لحظة الاستلام الفعلي بالمستودع.</li>
+                        <li><strong>الربط الشبكي المتوارث:</strong> بمجرد كتابة اسم العميل، يتأهب جدول تفاصيل المعاملات السفلي لاستقبال الأصناف التابعة لهذا العميل حصراً.</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.36 AM (2).jpeg" alt="Master Form"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 2 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 3: شاشة إضافة صنف تفصيلي وكود الصنف -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">2. تسجيل صيانة - تفاصيل الصنف</span>
+            <h2 class="text-royal border-orange">إدخال كود الصنف (مرونة كاملة وإلغاء بطء القوائم)</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>عند الانتقال لنموذج تفاصيل الأجهزة (Maintenance Inventory Form) لإضافة الصنف المخصص:</p>
+                    <ul class="bullet-list">
+                        <li><strong>التوارث التلقائي للبيانات:</strong> يتم ترحيل [رقم المعاملة] و [اسم العميل] آلياً للشاشة لضمان ربط خطوط الإنتاج.</li>
+                        <li><strong>ميزة Plain Text المرنة:</strong> تم إلغاء القوائم المنسدلة الطويلة (Dropdowns) لـ [كود الصنف] تفادياً لتهنيج وثقل التطبيق أثناء ضغط العمل داخل المخزن.</li>
+                        <li><strong>طرق الإدخال المتعددة:</strong> يمتلك أمين المخزن خيارين للتشغيل؛ إما **كتابة كود الصنف يدوياً باليد** بسرعة فائقة (مثل: `500006363`)، أو الضغط على **زر المربعات الصغير على اليمين** لتفعيل الكاميرا ولقط الباركود آلياً.</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.36 AM (4).jpeg" alt="Item Code Flex"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 3 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 4: تشغيل الكاميرا لمسح الرقم التسلسلي -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">3. قفل الكيبورد ومسح السيريال</span>
+            <h2 class="text-royal border-orange">تفعيل الكاميرا لقراءة السيريال نمبر (Serial Number) إجبارياً</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>لتحقيق أعلى معايير الجودة ومنع التلاعب أو كتابة أرقام عشوائية، فُرضت القيود الآلية التالية:</p>
+                    <ul class="bullet-list">
+                        <li><strong>إلغاء لوحة المفاتيح:</strong> حقل [الرقم التسلسلى] مغلق تماماً ومحمي بقفل رمادي يمنع الإدخال النصي العادي لتفادي الأخطاء الإملائية البشرية.</li>
+                        <li><strong>طريقة التشغيل الحصرية:</strong> يجب على الموظف **الضغط على زرار المربعات المتواجد على اليمين** داخل خانة السيريال المخصصة.</li>
+                        <li><strong>لقط البصمة الرقمية:</strong> تفتح كاميرا الهاتف فوراً كجهاز سكانر ذكي، وبمجرد توجيهها للملصق، يسحب السيريال وينزل فوراً بشكل آمن وموثق (مثل السيريال المعتمد للاختبار: `YRG-1003`).</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="grid-2">
+                        <div class="grid-col"><div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.37 AM (1).jpeg" alt="Serial Scanning"></div></div>
+                        <div class="grid-col"><div class="img-box"><img src="Screenshot 2026-06-23 061250.png" alt="PDF Serial QR"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 4 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 5: شروط المطابقة وفحص التحذيرات السحابية -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">4. الرقابة والتحقق السحابي</span>
+            <h2 class="text-royal border-orange">شروط ومطابقة السيريال نمبر الفورية (Valid_If)</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>بمجرد اكتمال مسح السيريال وقبل تمرير المعاملة، تنطلق معادلة (Valid_If) لإجراء فحص مزدوج:</p>
+                    <ul class="bullet-list">
+                        <li><strong>شرط الصلاحية والتبعية:</strong> يتحقق النظام لحظياً من تواجد السيريال وتطابقه مع كشوفات الأجهزة الكهربائية الرسمية التابعة لشركة YRG.</li>
+                        <li><strong>منع تكرار دخول الأجهزة:</strong> يقوم السيستم بفحص الفواتير السابقة؛ فإذا تبيّن أن الجهاز قد دخل ورشة الصيانة مسبقاً، يطلق الأبلكيشن تحذيراً أحمر اللون ويجمد المعاملة تماماً.</li>
+                        <li><strong>حماية الميزانية والمخازن:</strong> يتم إخفاء زر الحفظ [SAVE] تلقائياً في حالة المخالفة، ولا يُسمح بتمرير الحركة إلا بعد إخراج الجهاز المخالف أو تصحيح وضعه.</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="grid-2">
+                        <div class="grid-col"><div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.36 AM (3).jpeg" style="max-height:360px;" alt="Validation Check"></div></div>
+                        <div class="grid-col"><div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.37 AM (3).jpeg" style="max-height:360px;" alt="Validation Success"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 5 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 6: شاشة سجل الصيانة العام -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">5. أيقونة (.سجل الصيانة)</span>
+            <h2 class="text-royal border-orange">متابعة الأرشيف والدفتر الرقمي لحركات الصيانة</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>الأيقونة المتواجدة أقصى اليمين في الشريط السفلي للتطبيق، وتمثل قاعدة البيانات التاريخية:</p>
+                    <ul class="bullet-list">
+                        <li><strong>كشف الحالة الفوري:</strong> يعرض الأبلكيشن حركات الصيانة النشطة والقديمة مسجلة باسم العميل والسيريال المربوط به مباشرة بالواجهة (مثل: .محمد يوسف وتحتها السيريال المعتمد `YRG-1001`).</li>
+                        <li><strong>خيارات التحكم المتاحة:</strong> يتيح زر **القلم 📝** تعديل تفاصيل الحجز الفنية، بينما يفتح زر **السهم ➡️** تفاصيل بطاقة الفحص الكاملة.</li>
+                        <li><strong>الاختصار السريع:</strong> يتيح زر الزائد العائم **(+)** في الأسفل بدء دورة فحص واستلام صيانة جديدة فوراً دون الخروج من السجل.</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.36 AM (1).jpeg" alt="Maintenance Logs"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 6 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 7: شاشة تسجيل المرتجع العملي -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">6. أيقونة (تسجيل مرتجع)</span>
+            <h2 class="text-royal border-orange">أتمتة وإدخال الحركات في شاشة "تسجيل مرتجع"</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>التبويب الثاني من اليسار في الشريط السفلي، وهو مخصص لضبط حركات الارتجاع المباشرة للمستودعات:</p>
+                    <ul class="bullet-list">
+                        <li><strong>تثبيت الهوية المحاسبية (Page 1):</strong> يسجل السيستم كود معاملة الارتجاع تلقائياً (مثل: `f53d154b`) لتوثيق القيد المالي للفاتورة.</li>
+                        <li><strong>تحديد العميل:</strong> يضغط أمين المستودع على القائمة المنسدلة لاختيار اسم العميل صاحب البضاعة المرجعة (مثل: .المهندس طارق).</li>
+                        <li><strong>تسجيل سطور المرتجع:</strong> بالضغط على زر **New** بالأسفل، يتم فتح شاشة الصنف المرجع؛ حيث يُسحب كود الصنف باستخدام زر المربعات الجانبي، وتحديد [الكمية في المرتجع] بدقة وحفظها.</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.39 AM (2).jpeg" alt="Returns Form"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 7 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 8: شاشة سجل المرتجعات العام -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">7. أيقونة (سجل المرتجعات)</span>
+            <h2 class="text-royal border-orange">دفتر التدقيق والرقابة العامة على كشوفات المرتجعات</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>الأيقونة المتواجدة أقصى اليسار في الشريط السفلي، وهي لوحة الرقابة المخصصة للإدارة والمالية:</p>
+                    <ul class="bullet-list">
+                        <li><strong>الحصر المالي والمخزني الشامل:</strong> تعرض الشاشة تقريراً كاملاً بجميع أذونات الارتجاع التي تمت داخل مستودعات الشركة.</li>
+                        <li><strong>تتبع المعاملات بالرموز:</strong> تظهر الفواتير منظمة بـ اسم العميل ومكتوباً تحتها كود الحركة المسجل على الـ Cloud (مثل: .محمد يوسف وتحتها حركته المعتمدة `2a46d928`).</li>
+                        <li><strong>إدارة المستندات:</strong> بالضغط على الثلاث نقاط الجانبية **(⋮)** بجانب أي إذن، يمتلك المدير صلاحية مراجعته، مراجعته محاسبياً، أو تعقبه لحظياً.</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="img-box"><img src="WhatsApp Image 2026-06-23 at 4.47.36 AM.jpeg" alt="Returns Logs"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 8 من 9</span>
+        </div>
+    </div>
+
+    <!-- الشريحة 9: شكل الفاتورة والمخرج المعتمد النهائي -->
+    <div class="slide">
+        <div>
+            <span class="step-badge">المخرج المعتمد النهائي للسيستم</span>
+            <h2 class="text-royal border-orange">وثيقة إذن استلام المعاملة وبنية الفاتورة الرسمية (PDF)</h2>
+            <div class="flex-container">
+                <div class="col-text">
+                    <p>بمجرد اكتمال الفحص وضغط زر الحفظ [SAVE]، يشتغل كود Apps Script تلقائياً لتوليد وطباعة الوثيقة الرسمية [الممثلة في ملف رقم المعاملة - اسم العميل.pdf]:</p>
+                    <ul class="bullet-list">
+                        <li><strong>ترويسة وهوية مستند الصيانة:</strong> يخرج بترويسة الشركة الرسمية منسقاً بالأزرق الملكي والبرتقالي، ومثبتاً به "نوع المعاملة: إدخال صيانة مخزنية" وحالة الاعتماد الجارية "**تحت الفحص 🔍**".</li>
+                        <li><strong>الربط الإلكتروني بـ QR Code:</strong> يولد السيستم الـ QR Code الفعلي الحقيقي المرتبط بالسيريال المفحوص والمثبت كعينة تجريبية ناجحة (`YRG-1001`) لسهولة الجرد والرقابة والمتابعة لاحقاً من قِبل الإدارة العليا.</li>
+                    </ul>
+                </div>
+                <div class="col-img" style="vertical-align: top;">
+                    <!-- بنية وشكل الفاتورة النهائية المعتمدة لشركة YRG -->
+                    <div class="invoice-box">
+                        <div class="invoice-header">
+                            <div>
+                                <h3 class="text-royal" style="margin:0;">YRG</h3>
+                                <small style="color:#64748b; font-weight: bold;">مستند صيانة أجهزة كهربائية</small>
+                            </div>
+                            <div style="text-align: left;">
+                                <span style="background:#E67E22; color:white; padding:4px 10px; border-radius:4px; font-size:12px; font-weight:700;">نسخة مستودع معتمدة</span>
+                            </div>
+                        </div>
+                        <p style="font-size:14px; margin-bottom:5px;"><strong>رقم المعاملة :</strong> <span style="color:#64748b; font-family:monospace;">2354c0bd</span> | <strong>التاريخ:</strong> 2026-06-23</p>
+                        <p style="font-size:14px; margin-bottom:15px;"><strong>العميل:</strong> اسم العميل (.المهندس طارق)</p>
+                        
+                        <table class="invoice-table">
+                            <thead>
+                                <tr>
+                                    <th>الرقم التسلسلي</th>
+                                    <th>كود الصنف</th>
+                                    <th>اسم الصنف</th>
+                                    <th>الكمية</th>
+                                    <th>الحالة عند الاستلام</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-family:monospace; font-weight:700; color:#E67E22;">YRG-1001</td>
+                                    <td style="font-family:monospace;">500006363</td>
+                                    <td>جهاز كهربائي YRG</td>
+                                    <td>1</td>
+                                    <td style="color:#002D62; font-weight:700;">تحت الفحص 🔍</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top:25px; display:flex; justify-content:space-between; font-size:13px; color:#475569; border-top:1px dashed #cbd5e1; padding-top:15px;">
+                            <span>توقيع أمين المخزن: .........................</span>
+                            <span>توقيع الفني الصيانة: .........................</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>دليل مستخدم تطبيق AppSheet للصيانة والمرتجعات</span>
+            <span>الشريحة 9 من 9</span>
+        </div>
+    </div>
+
+    <!-- أزرار التحكم بالتنقل التفاعلي -->
+    <div class="nav-container">
+        <button class="nav-btn prev" onclick="changeSlide(-1)">السابق</button>
+        <button class="nav-btn" onclick="changeSlide(1)">التالي</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function changeSlide(step) {
+            showSlide(currentSlide + step);
+        }
+        
+        // إتاحة التحكم عبر أزرار الكيبورد اليمين واليسار لسهولة العرض
+        document.addEventListener('keydown', function(e) {
+            if(e.key === "ArrowLeft") changeSlide(1);
+            if(e.key === "ArrowRight") changeSlide(-1);
+        });
+    </script>
+
+</body>
+</html>
